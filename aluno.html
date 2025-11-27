@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fuji Aluno Dashboard</title>
+  <link rel="stylesheet" href="stylealuno.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="page">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-content">
+        <a class="cta-header" style="text-decoration: none;" href="index.html">⬅ Academia</a><a href="index.html"><img style="height: 110px;" src="/logofuji-removebg-preview.png" alt=""></a>
+        <div class="title">FUJI ALUNO</div>
+      </div>
+    </header>
+
+    <!-- NAV TABS -->
+    <nav class="tabs">
+      <button class="tab active"><i data-lucide="activity"></i> Dashboard</button>
+      <button class="tab"><i data-lucide="star"></i> Avaliações</button>
+      <button class="tab"><i data-lucide="calendar"></i> Próximas Aulas</button>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+      <!-- DASHBOARD -->
+      <section class="dashboard">
+        <div class="welcome-box">
+          <h2>Olá, João Silva! 👋</h2>
+          <p>Bem-vindo de volta ao seu painel de treinos. Continue evoluindo!</p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card red">
+            <i data-lucide="book"></i>
+            <h3>47</h3>
+            <p>Total de Aulas</p>
+          </div>
+          <div class="stat-card green">
+            <i data-lucide="activity"></i>
+            <h3>89%</h3>
+            <p>Frequência</p>
+          </div>
+          <div class="stat-card amber">
+            <i data-lucide="star"></i>
+            <h3>4.3</h3>
+            <p>Avaliação Média</p>
+          </div>
+          <div class="stat-card blue">
+            <i data-lucide="trophy"></i>
+            <h3>Faixa Azul</h3>
+            <p>Próxima Meta</p>
+          </div>
+        </div>
+
+        <div class="next-class">
+          <div class="next-class-header">
+            <h3>Próxima Aula</h3>
+            <i data-lucide="clock"></i>
+          </div>
+          <div class="next-class-content">
+            <div>
+              <p class="modality">Boxe</p>
+              <p><strong>Professor:</strong> Sensei Carlos</p>
+              <p><strong>Horário:</strong> Hoje às 18:00</p>
+            </div>
+            <button class="confirm-btn">CONFIRMAR PRESENÇA</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- AVALIAÇÕES -->
+      <section class="avaliacoes">
+        <h2>Suas Avaliações</h2>
+
+        <div class="avaliacao positiva">
+          <div class="avaliacao-header">
+            <div class="left">
+              <i data-lucide="check-circle"></i>
+              <div>
+                <h3>Boxe</h3>
+                <p>Sensei Carlos • 05 Nov 2024</p>
+              </div>
+            </div>
+            <div class="stars">★★★★☆ 4.5/5</div>
+          </div>
+
+          <div class="comentario">
+            <h4><i data-lucide="message-square"></i> Comentário do Professor</h4>
+            <p>"Excelente evolução na técnica de socos! Continue praticando os movimentos de defesa."</p>
+          </div>
+
+          <div class="avaliacao-grid">
+            <div>
+              <h5><i data-lucide="trophy"></i> Pontos Positivos</h5>
+              <ul>
+                <li><i data-lucide="check-circle"></i> Técnica aprimorada</li>
+                <li><i data-lucide="check-circle"></i> Boa disciplina</li>
+                <li><i data-lucide="check-circle"></i> Dedicação nos treinos</li>
+              </ul>
+            </div>
+            <div>
+              <h5><i data-lucide="target"></i> Áreas para Melhorar</h5>
+              <ul>
+                <li><i data-lucide="trending-up"></i> Trabalhar mais a defesa</li>
+                <li><i data-lucide="trending-up"></i> Aumentar resistência</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRÓXIMAS AULAS -->
+      <section class="aulas">
+        <h2>Próximas Aulas</h2>
+
+        <div class="aula confirmada">
+          <div class="info">
+            <div class="icon"><i data-lucide="calendar"></i></div>
+            <div>
+              <h3>Boxe</h3>
+              <p>Sensei Carlos • Hoje às 18:00</p>
+            </div>
+          </div>
+          <span class="status confirmada">Confirmada</span>
+        </div>
+
+        <div class="aula agendada">
+          <div class="info">
+            <div class="icon"><i data-lucide="calendar"></i></div>
+            <div>
+              <h3>Jiu-Jitsu</h3>
+              <p>Mestre Roberto • Amanhã às 19:30</p>
+            </div>
+          </div>
+          <button class="confirm-btn">CONFIRMAR</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-title">Sistema Fuji</div>
+      <p>© 2025 Sistema Fuji. Todos os direitos reservados. | Desenvolvido por squad 26.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    lucide.createIcons();
+  </script>
+  <script>
+  lucide.createIcons(); // ícones funcionando
+
+  // Pega os botões e as seções
+  const tabs = document.querySelectorAll('.tab');
+  const sections = document.querySelectorAll('main section');
+
+  // Mostra apenas a primeira seção por padrão
+  sections.forEach((s, i) => s.style.display = i === 0 ? 'block' : 'none');
+
+  // Adiciona comportamento aos botões
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => {
+      // Remove estado ativo de todos
+      tabs.forEach(t => t.classList.remove('active'));
+      sections.forEach(s => s.style.display = 'none');
+
+      // Ativa o botão clicado e mostra a seção correspondente
+      tab.classList.add('active');
+      sections[index].style.display = 'block';
+    });
+  });
+</script>
+</body>
+</html>
